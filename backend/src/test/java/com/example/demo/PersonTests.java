@@ -90,7 +90,7 @@ public class PersonTests {
         // error message ตรงชนิด และถูก field
         ConstraintViolation<Person> v = result.iterator().next();
         assertEquals("must match \"\\d{13}\"", v.getMessage());
-        assertEquals("personId", v.getPropertyPath().toString());
+        assertEquals("personIdx", v.getPropertyPath().toString());
     }
 
     @Test
@@ -104,7 +104,7 @@ public class PersonTests {
         assertThrows(DataIntegrityViolationException.class, () -> {
             // สร้าง person object ตัวที่ 2
             Person p2 = new Person();
-            p2.setPersonId("1234567890123");
+            p2.setPersonId("1234567890123x");
             personRepository.saveAndFlush(p2);
         });
     }
