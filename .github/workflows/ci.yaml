@@ -10,12 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
-    - name: Install openjdk
-      run: |
-        sudo apt-get install -y openjdk-8-jdk
-
     - name: Check out
       uses: actions/checkout@v1
+
+    - name: Set up JDK 1.8
+      uses: actions/setup-java@v1
 
     - name: Run gradle test
       run: |
