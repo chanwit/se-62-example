@@ -21,4 +21,4 @@ jobs:
     - name: Run gradle test
       run: |
         cd backend
-        ./gradlew test
+        ./gradlew test -i
